@@ -51,6 +51,8 @@ python text_classification.py --model_checkpoint "lxyuan/distilbert-base-multili
 
 # For preprocessing only, without training 
 python text_classification.py --preprocess_only --save_processed True
+
+# More arguments can be found with descriptions within the script
 ```
 
 ### Image Sentiment Analysis
@@ -62,6 +64,8 @@ python image_classification.py --model_checkpoint "microsoft/resnet-50" \
                             --batch_size 16 \
                             --num_epochs 5 \
                             --learning_rate 0.05
+
+# More arguments can be found with descriptions within the script
 ```
 
 ### Multimodal Sentiment Analysis
