@@ -115,8 +115,8 @@ class FusionClassifier(nn.Module):
 
 def train_and_evaluate():
     # Replace these with your actual HuggingFace model IDs.
-    text_model_id = "prodm93/twitter-text-sentiment-analyser"  
-    image_model_id = "prodm93/resnet-50-finetuned-eurosat-albumentations"   
+    text_model_id = "prodm93/twitter-text-sentiment-classifier"  
+    image_model_id = "prodm93/twiiter-image-sentiment-resnet50-ft"   
 
     # Initialise text model and tokeniser
     tokenizer = AutoTokenizer.from_pretrained(text_model_id)
