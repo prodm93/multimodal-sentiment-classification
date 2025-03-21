@@ -8,7 +8,7 @@ Enrichment MVSA Dataset With Sentiment Label_ as found on Kaggle: https://www.ka
 The repository contains tools for the following pipelines:
 1. Text sentiment analysis using Transformers
 2. Image sentiment analysis using ResNet vision model
-3. Multimodal sentiment analysis combining text and image features
+3. Multimodal sentiment analysis combining text and image features using a concatenation layer, followed by further training 
 
 ## Repository Structure
 ```
