@@ -1,6 +1,6 @@
 # Multimodal Sentiment Analysis
 
-This project combines text and image modalities to create a model capable of accepting both as input and analysing its sentiment as positive, negative or neutral. The data used for proof-of-concept includes text and image data from Twitter from the _Enrichment MVSA Twitter Dataset for Sentiment Analysis with Sentiment Label
+This project combines text and image modalities to create a model capable of accepting either modality as input and analysing its sentiment as positive, negative or neutral. The data used for proof-of-concept includes text and image data from Twitter from the _Enrichment MVSA Twitter Dataset for Sentiment Analysis with Sentiment Label
 Enrichment MVSA Dataset With Sentiment Label_ as found on Kaggle: https://www.kaggle.com/datasets/dunyajasim/twitter-dataset-for-sentiment-analysis.
 
 ## Overview
