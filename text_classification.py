@@ -355,7 +355,7 @@ def main():
     
     # Set up training arguments
     model_name = args.model_checkpoint.split("/")[-1]
-    repo_name = args.hub_model_id or "prodm93/twt-sentiment-analysis"
+    repo_name = args.hub_model_id or "prodm93/twitter-text-sentiment-classifier"
     
     training_args = TrainingArguments(
         output_dir=repo_name,
