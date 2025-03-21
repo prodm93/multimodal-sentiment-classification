@@ -35,6 +35,9 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+
+Training was performed on virtual machines on vast.ai with 11 GB GPU RAM (NVIDIA 1x RTX 3060, e.g. machine number 15473, or instance IDs 18888767 or 18948673) using the platform's native PyTorch docker image. If using GPU, it is highly recommended to run these scripts on an identical or similar machine to ensure NVIDIA driver compatibility with PyTorch packages.
+
 **N.B. Upon cloning the repository, please download the ZIP file containing the labelled images from the Kaggle dataset to your working directory (do not decompress). The ZIP file can be downloaded here: https://www.kaggle.com/datasets/dunyajasim/twitter-dataset-for-sentiment-analysis/data?select=Images**
 
 The text dataset is directly downloaded in the text classification script using KaggleHub, but you are welcome to provide your own local data file by passing the path to the ```--data-path``` argument when running the script.
