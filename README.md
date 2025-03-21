@@ -10,12 +10,7 @@ The repository contains tools for the following pipelines:
 3. Multimodal sentiment analysis combining text and image features
 
 ## Repository Structure
-- `text_classification.py`: Script to preprocess text dataset and fine-tune text sentiment classification model
-- `image_classification.py`: Script to preprocess images and training image sentiment classification model
-- `multimodal_classification.py`: Script to combines text and image models using a concatenation layer for multimodal sentiment analysis
-- `preprocessed_text.json`: File containing preprocessed Twitter text data ready for the fine-tuning process
-- `requirements.txt`: Packages required to run the scripts
-.
+
 ├── text_classification.py       # Script to preprocess text dataset and fine-tune text sentiment classification model
 ├── image_classification.py      # Script to preprocess images and training image sentiment classification model
 ├── multimodal_classification.py # Script to combines text and image models using a concatenation layer for multimodal sentiment analysis
