@@ -41,7 +41,7 @@ The text dataset is directly downloaded in the text classification script using 
 ### Text Sentiment Analysis
 
 ```bash
-# Process text data and fine-tune a text sentiment model
+# Process text data and fine-tune thetext sentiment classification model
 python text_classification.py --model_checkpoint "lxyuan/distilbert-base-multilingual-cased-sentiments-student" \
                            --batch_size 8 \
                            --num_epochs 5 \
@@ -54,9 +54,8 @@ python text_classification.py --preprocess_only --save_processed True
 
 ### Image Sentiment Analysis
 
-For Twitter dataset analysis, <complete this later
 ```bash
-# Train an image sentiment model
+# Train the image sentiment classification model
 python image_classification.py --model_checkpoint "microsoft/resnet-50" \
                             --data_path "./Images.zip" \
                             --batch_size 16 \
@@ -67,6 +66,6 @@ python image_classification.py --model_checkpoint "microsoft/resnet-50" \
 ### Multimodal Sentiment Analysis
 
 ```bash
-# Run multimodal concatenation and train fused nodel after training both text and image models
+# Run multimodal concatenation and train fused model after training both text and image models
 python multimodal_classification.py
 ```
