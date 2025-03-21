@@ -34,6 +34,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+**N.B. Upon cloning the repository, please download the ZIP file containing the labelled images from the Kaggle dataset to your working directory (do not decompress). The ZIP file can be downloaded here: https://www.kaggle.com/datasets/dunyajasim/twitter-dataset-for-sentiment-analysis/data?select=Images**
 
 ### Text Sentiment Analysis
 
