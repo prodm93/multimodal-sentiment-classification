@@ -6,6 +6,8 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModel, AutoFeatureExtractor
 from datasets import load_dataset
+from sklearn.model_selection import train_test_split
+from torch.utils.data import Subset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # class for preparing dataset for multimodal model
@@ -142,6 +144,18 @@ def train_and_evaluate():
     dataset = MultiModalDataset(texts, image_dataset, labels, tokenizer, feature_extractor)
     dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
 
+    # Set up train and validation splits
+    indices = list(range(len(dataset)))
+    train_indices, val_indices = train_test_split(
+        indices, test_size=0.2, random_state=42, stratify=[dataset[i][2].item() for i in indices]
+    )
+
+    train_dataset = Subset(dataset, train_indices)
+    val_dataset = Subset(dataset, val_indices)
+
+    train_dataloader = DataLoader(train_dataset, batch_size=2, shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False)
+
     # Set up optimiser and loss function for training
     optimizer = optim.Adam(fusion_model.parameters(), lr=2e-5)
     criterion = nn.CrossEntropyLoss()
@@ -151,7 +165,7 @@ def train_and_evaluate():
     epochs = 3
     for epoch in range(epochs):
         total_loss = 0.0
-        for batch in dataloader:
+        for batch in train_dataloader:
             text_inputs, image_inputs, labels = batch
             labels = labels.to(device)
 
@@ -166,12 +180,12 @@ def train_and_evaluate():
             total_loss += loss.item()
         print(f"Epoch {epoch+1}/{epochs} - Loss: {total_loss/len(dataloader):.5f}")
 
-    # Evaluation loop
+    # Set up evaluation loop
     fusion_model.eval()
     all_preds = []
     all_labels = []
     with torch.no_grad():
-        for batch in dataloader:
+        for batch in val_dataloader:
             text_inputs, image_inputs, labels = batch
             labels = labels.to(device)
             text_inputs = {k: v.to(device) for k, v in text_inputs.items()}
